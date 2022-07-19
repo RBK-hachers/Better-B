@@ -1,9 +1,5 @@
 import Link from "next/link"
-import Aboutus from "./Aboutus"
-import Diet from "./Diet"
-import Workout from "./Workout"
-import User from "./User"
-Aboutus
+
 function Navbar(){
     return(
         <div>

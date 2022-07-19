@@ -1,12 +1,23 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from 'axios'
-import { useState } from 'react'
-export default function Diet({diets}:Diets){
+import { useEffect, useState } from 'react'
+export default function Diet(){
+    const [data,setData]=useState([])
+    interface OneDiet {
+        title: string,
+        imgurl: string,
+        description:string
+    }
+
+    
+    useEffect(()=>{
+        fetch("http://localhost:2000/api/diets").then(respone=>respone.json()).then(data=>setData(data))
+    },[])
     return(
         <div>
             <h1>Diet page</h1>
-            {diets.map((diet,index)=>(
+            {data.map((diet:any,index:number)=>(
                 <ul>
                     <div key={index}>
                     <h1>{diet.title}</h1>
@@ -21,13 +32,6 @@ export default function Diet({diets}:Diets){
     )
 }
  
-interface OneDiet {
-    title: string,
-    imgurl: string,
-    description:string
-}
-interface Diets{
-    diets:OneDiet[]
-}
+
 
 

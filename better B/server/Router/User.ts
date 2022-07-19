@@ -11,6 +11,7 @@ router.get("/api/user", async (req: Request, res: Response) => {
   return res.send(user);
 });
 
+
 //sign up 
 router.post('/api/user/signup', async (req:Request, res:Response) => {
     // const salt:string="saltkey"

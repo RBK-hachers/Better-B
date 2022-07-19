@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import express from "express";
 import { json } from "body-parser";
 import {userRouter} from  "./Router/User"
-
+import { Dietrouter } from "./Router/Diet";
 
 import cors from "cors"
 const app=express()
@@ -13,6 +13,8 @@ app.use(express.json())
 app.use(cors())
 //User
 app.use(userRouter)
+
+app.use(Dietrouter)
 
 
 

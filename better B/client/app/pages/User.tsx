@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react"
 function User(){
     const [data,setData] = useState([])
+    //get users from database
     useEffect(() =>{
      fetch('http://localhost:2000/api/user')
      .then ((response)=>{
@@ -11,24 +12,35 @@ function User(){
         })
      })
     },[])
-    interface User{
-        name: string;
-        img: string;
-        email: string;
-        password: string;
-        weight: number;
-        height: number;
-        imc: number;
-        description: string;
-    }
+
+
+
+
+
+//sign up 
+ const [newUser,setNewUser] = useState({email:"fetchFrontEnd@gamil.com",password:"password"})
+ const signup= async ()=>{
+try{
+    const res = await fetch("http://localhost:2000/api/user/signup",{
+     method:"POST",
+     headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newUser)
+    })
+    return res
+}catch (error) {
+    console.log(error);
+ }
+
+ }
+
+
+
     return(
         <div>
-        <h1>{data.map((user:any,index:number)=>{
-return <div key={index}>{
-<h1>{user.name}</h1>
-}
-</div>
-       })}</h1>
+{signup()}
         </div>
         
     )

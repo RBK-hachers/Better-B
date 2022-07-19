@@ -19,4 +19,4 @@ export default interface IDiet extends Document {
       required: true,
     }
   });
-  export const DietModel =model<IDiet>("users",DietSchema)
+  export const DietModel =model<IDiet>("diets",DietSchema)

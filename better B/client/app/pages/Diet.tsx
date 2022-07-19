@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 export default function Diet(){
     const [data,setData]=useState([])
     interface OneDiet {
-        title: string,
-        imgurl: string,
+        name: string,
+        img: string,
         description:string
     }
 
@@ -16,12 +16,11 @@ export default function Diet(){
     },[])
     return(
         <div>
-            <h1>Diet page</h1>
             {data.map((diet:any,index:number)=>(
                 <ul>
                     <div key={index}>
-                    <h1>{diet.title}</h1>
-                    <img src={diet.imgurl}/>
+                    <h1>{diet.name}</h1>
+                    <img src={diet.img} />
                     <p>{diet.description}</p>
                     </div>
                 </ul>

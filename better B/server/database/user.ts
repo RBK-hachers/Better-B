@@ -10,6 +10,7 @@ export default interface IUser extends Document {
     description: string;
   }
   // 2. Create schema unsing typescript
+  
   const UserSchema = new Schema<IUser>({
     name: {
       type: String,

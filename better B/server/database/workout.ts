@@ -25,4 +25,4 @@ export default interface IWorkout extends Document {
         enum:[]
     }
   });
-  export const DietModel =model<IWorkout>("workouts",WorkoutSchema)
+  export const WorkoutModel =model<IWorkout>("workouts",WorkoutSchema)

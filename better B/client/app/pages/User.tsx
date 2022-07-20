@@ -19,7 +19,7 @@ function User(){
 
 //sign up 
  const [newUser,setNewUser] = useState({email:"fetchFrontEnd@gamil.com",password:"password"})
- const signup = async ()=>{
+ const signup : any = async ()=>{
 try{
     const res = await fetch("http://localhost:2000/api/user/signup",{
      method:"POST",
@@ -40,7 +40,11 @@ try{
 
     return(
         <div>
-{signup()}
+{data.map((user:any,index:number)=>(
+    <div key={index}>
+        <h1>{user.name}</h1>
+    </div>
+))}
         </div>
         
     )

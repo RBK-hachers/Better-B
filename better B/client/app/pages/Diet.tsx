@@ -12,6 +12,7 @@ export default function Diet({diets}:any){
     return(
         <div>
             <Navbar />
+
                 <ul>
             {diets.map((diet:any,index:number)=>(
                     <div key={index}>

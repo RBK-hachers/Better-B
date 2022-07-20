@@ -1,4 +1,3 @@
-import { json } from 'body-parser';
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
 import { DietModel } from "../database/diets";

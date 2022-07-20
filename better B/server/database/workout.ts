@@ -1,12 +1,12 @@
 import { Document, Schema, model } from "mongoose"; 
-export default interface IDiet extends Document {
+export default interface IWorkout extends Document {
     name: string;
     img: string;
     description: string;
-    category: string;
+    categorie:string;
   }
  
-  const DietSchema = new Schema<IDiet>({
+  const WorkoutSchema = new Schema<IWorkout>({
     name: {
       type: String,
     
@@ -19,10 +19,10 @@ export default interface IDiet extends Document {
       type: String,
       required: true,
     },
-    category: {
-      type: String,
-      enum:["breakfast","lunch","dinner"],
-      required:true
+    categorie:{
+        type : String,
+        required:true,
+        enum:[]
     }
   });
-  export const DietModel =model<IDiet>("diets",DietSchema)
+  export const DietModel =model<IWorkout>("workouts",WorkoutSchema)
